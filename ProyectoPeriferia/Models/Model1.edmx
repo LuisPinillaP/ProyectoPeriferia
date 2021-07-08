@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="clienteperiferiaitModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="analista">
+          <Key>
+            <PropertyRef Name="ID_ANALISTA" />
+          </Key>
+          <Property Name="ID_ANALISTA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_ANALISTA" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="N_CASO" Type="int" Nullable="false" />
+          <Property Name="TICKET" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cliente_externo">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_CLIENTE" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CORREO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="N_CASO" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="soporte">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NOMBRE_SOPORTE" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="TIPO_CASO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="N_CASO" Type="int" Nullable="false" />
+          <Property Name="TICKET" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="clienteperiferiaitModelStoreContainer">
+          <EntitySet Name="analista" EntityType="Self.analista" Schema="clienteperiferiait" store:Type="Tables" />
+          <EntitySet Name="cliente_externo" EntityType="Self.cliente_externo" Schema="clienteperiferiait" store:Type="Tables" />
+          <EntitySet Name="soporte" EntityType="Self.soporte" Schema="clienteperiferiait" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="clienteperiferiaitModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="analista">
+          <Key>
+            <PropertyRef Name="ID_ANALISTA" />
+          </Key>
+          <Property Name="ID_ANALISTA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_ANALISTA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="N_CASO" Type="Int32" Nullable="false" />
+          <Property Name="TICKET" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cliente_externo">
+          <Key>
+            <PropertyRef Name="ID_CLIENTE" />
+          </Key>
+          <Property Name="ID_CLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_CLIENTE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CORREO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="N_CASO" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="soporte">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE_SOPORTE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIPO_CASO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="N_CASO" Type="Int32" Nullable="false" />
+          <Property Name="TICKET" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="clienteperiferiaitEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="analista" EntityType="Self.analista" />
+          <EntitySet Name="cliente_externo" EntityType="Self.cliente_externo" />
+          <EntitySet Name="soporte" EntityType="Self.soporte" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="clienteperiferiaitModelStoreContainer" CdmEntityContainer="clienteperiferiaitEntities">
+          <EntitySetMapping Name="analista">
+            <EntityTypeMapping TypeName="clienteperiferiaitModel.analista">
+              <MappingFragment StoreEntitySet="analista">
+                <ScalarProperty Name="ID_ANALISTA" ColumnName="ID_ANALISTA" />
+                <ScalarProperty Name="NOMBRE_ANALISTA" ColumnName="NOMBRE_ANALISTA" />
+                <ScalarProperty Name="N_CASO" ColumnName="N_CASO" />
+                <ScalarProperty Name="TICKET" ColumnName="TICKET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente_externo">
+            <EntityTypeMapping TypeName="clienteperiferiaitModel.cliente_externo">
+              <MappingFragment StoreEntitySet="cliente_externo">
+                <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+                <ScalarProperty Name="NOMBRE_CLIENTE" ColumnName="NOMBRE_CLIENTE" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="CORREO" ColumnName="CORREO" />
+                <ScalarProperty Name="N_CASO" ColumnName="N_CASO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="soporte">
+            <EntityTypeMapping TypeName="clienteperiferiaitModel.soporte">
+              <MappingFragment StoreEntitySet="soporte">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NOMBRE_SOPORTE" ColumnName="NOMBRE_SOPORTE" />
+                <ScalarProperty Name="TIPO_CASO" ColumnName="TIPO_CASO" />
+                <ScalarProperty Name="N_CASO" ColumnName="N_CASO" />
+                <ScalarProperty Name="TICKET" ColumnName="TICKET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

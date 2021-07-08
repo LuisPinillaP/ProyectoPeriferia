@@ -1,0 +1,50 @@
+﻿@model ProyectoPeriferia.Models.analista
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>analista</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID_ANALISTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_ANALISTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOMBRE_ANALISTA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOMBRE_ANALISTA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.N_CASO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.N_CASO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TICKET)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TICKET)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
